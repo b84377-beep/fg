@@ -94,31 +94,67 @@
   </header>
 
   <main>
-    <section class="container hero">
-      <div style="flex:1;min-width:300px">
-        <h1>以科技連結閱讀與永續 — Fu Green 智慧永續圖書館</h1>
-        <p>Fu Green 結合 AI 智慧管理、能源監控與永續教育，讓圖書館成為低碳學習場域。即時能源視覺化、綠色閱讀挑戰、個人永續報告與 Fu Bot 智能助理，打造校園零碳行動入口。</p>
+   <section class="container hero">
+  <div style="flex:1;min-width:300px; display:flex; flex-direction:column; gap:20px;">
+
+    <!-- 文字 + 按鈕 + 影片包成同一塊 -->
+    <div>
+      <h1>以科技連結閱讀與永續 — Fu Green 智慧永續圖書館</h1>
+      <p>Fu Green 結合 AI 智慧管理、能源監控與永續教育，讓圖書館成為低碳學習場域。即時能源視覺化、綠色閱讀挑戰、個人永續報告與 Fu Bot 智能助理，打造校園零碳行動入口。</p>
+
+      <!-- 按鈕 + 影片橫向排列 -->
+      <div style="
+        display:flex;
+        align-items:flex-start;
+        gap:16px;
+        flex-wrap:wrap;
+        margin-top:14px;
+      ">
+        <!-- 按鈕 -->
         <a class="cta" href="#features">了解更多功能</a>
+
+        <!-- 小型影片 -->
+        <div style="width:220px; max-width:100%;">
+          <iframe 
+            width="100%" 
+            height="125"
+            src="https://www.youtube.com/embed/dWzmrJISHWc"
+            title="輔仁大學校園十大特色景觀介紹"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+          <p style="margin-top:6px;color:#888;font-size:12px;">
+            影片：認識輔仁大學
+          </p>
+        </div>
       </div>
-      <aside class="hero-card">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
-          <div>
-            <div style="font-size:13px;color:var(--muted)">今日節能建議</div>
-            <div style="font-weight:800;font-size:18px;margin-top:6px">關閉未使用會議室空調 2 小時</div>
-          </div>
-          <div style="text-align:right">
-            <div style="font-size:12px;color:var(--muted)">本月減碳</div>
-            <div style="font-weight:800;font-size:20px;color:var(--green-700)">1.8 kg CO₂e</div>
-          </div>
-        </div>
-        <canvas id="energyChart"></canvas>
-        <div class="kpi">
-          <div class="item"><div class="num">5,230+</div><div class="muted">綠色閱讀參與人次</div></div>
-          <div class="item"><div class="num">+34%</div><div class="muted">電子書借閱成長</div></div>
-          <div class="item"><div class="num">−12%</div><div class="muted">能源消耗下降</div></div>
-        </div>
-      </aside>
-    </section>
+    </div>
+  </div>
+
+  <!-- 保留你的右側能源卡片 -->
+  <aside class="hero-card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+      <div>
+        <div style="font-size:13px;color:var(--muted)">今日節能建議</div>
+        <div style="font-weight:800;font-size:18px;margin-top:6px">關閉未使用會議室空調 2 小時</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:12px;color:var(--muted)">本月減碳</div>
+        <div style="font-weight:800;font-size:20px;color:var(--green-700)">1.8 kg CO₂e</div>
+      </div>
+    </div>
+
+    <canvas id="energyChart"></canvas>
+
+    <div class="kpi">
+      <div class="item"><div class="num">5,230+</div><div class="muted">綠色閱讀參與人次</div></div>
+      <div class="item"><div class="num">+34%</div><div class="muted">電子書借閱成長</div></div>
+      <div class="item"><div class="num">−12%</div><div class="muted">能源消耗下降</div></div>
+    </div>
+  </aside>
+</section>
+
 
     <section id="features" class="container">
       <h2 style="font-size:18px">主要功能</h2>
@@ -235,5 +271,6 @@
   </script>
 </body>
 </html>
+
 
 
