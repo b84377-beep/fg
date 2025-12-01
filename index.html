@@ -99,48 +99,58 @@
 
     <!-- 文字 + 按鈕 + 影片包成同一塊 -->
     <div>
-      <h1>以科技連結閱讀與永續 — Fu Green 智慧永續圖書館</h1>
-      <p>Fu Green 結合 AI 智慧管理、能源監控與永續教育，讓圖書館成為低碳學習場域。即時能源視覺化、綠色閱讀挑戰、個人永續報告與 Fu Bot 智能助理，打造校園零碳行動入口。</p>
+   <section style="max-width: 1200px; margin: auto; padding: 40px 20px;">
 
-      <!-- 按鈕 + 影片橫向排列 -->
-      <div style="
-        display:flex;
-        align-items:flex-start;
-        gap:16px;
-        flex-wrap:wrap;
-        margin-top:14px;
-      ">
-<!-- 按鈕 + 影片橫向排列（最佳化版） -->
-<div style="
-  display:flex;
-  align-items:flex-start;
-  gap:20px;
-  flex-wrap:wrap;
-  margin-top:16px;
-">
+  <!-- 標題 -->
+  <h1 style="font-size: 2.2rem; font-weight: 700; color: #1a3d2f; margin-bottom: 16px; text-align: left;">
+    以科技連結閱讀與永續 — Fu Green 智慧永續圖書館
+  </h1>
 
-  <!-- 按鈕 -->
-  <a class="cta" href="#features" style="flex:0 0 auto;">了解更多功能</a>
+  <!-- 介紹文字（靠左、較佳行距） -->
+  <p style="text-align: left; max-width: 760px; font-size: 1.1rem; line-height: 1.7; color: #333;">
+    Fu Green 結合 AI 智慧管理、能源監控與永續教育，讓圖書館成為低碳學習場域。
+    即時能源視覺化、綠色閱讀挑戰、個人永續報告與 Fu Bot 智能助理，打造校園零碳行動入口。
+  </p>
 
-  <!-- 影片容器（保持 16:9） -->
+  <!-- 按鈕 + 大型影片 -->
   <div style="
-    flex:1 1 360px;
-    max-width:520px;
-    position:relative;
-    padding-bottom:56.25%;
-    height:0;
-    border-radius:12px;
-    overflow:hidden;
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 26px;
   ">
-    <iframe
-      src="https://www.youtube.com/embed/Y5-M9Cv0nLM"
-      title="Fu Green 介紹影片"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      style="position:absolute; inset:0; width:100%; height:100%; border-radius:12px;">
-    </iframe>
+
+    <!-- 了解更多 -->
+    <a class="cta" href="#features"
+      style="flex: 0 0 auto; padding: 14px 22px; font-size: 1rem; border-radius: 8px;">
+      了解更多功能
+    </a>
+
+    <!-- 放大版 YouTube 影片 -->
+    <div style="
+      flex: 1 1 600px;
+      max-width: 760px;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #000;
+    ">
+      <iframe
+        src="https://www.youtube.com/embed/Y5-M9Cv0nLM"
+        title="Fu Green 介紹影片"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 14px;">
+      </iframe>
+    </div>
+
   </div>
+
+</section>
 
 </div>
 
@@ -266,6 +276,7 @@
   </script>
 </body>
 </html>
+
 
 
 
