@@ -127,10 +127,38 @@
       了解更多功能
     </a>
 
-  <!-- 右側圖表 -->
-  <aside class="hero-card" style="flex:1; min-width:320px; margin-right:48px;">
-      <!-- 保留你的右側能源卡片 -->
-  <aside class="hero-card">
+ <!-- 影片 + 圖表 左右排列容器 -->
+<div style="
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+">
+
+  <!-- 左邊影片 (小尺寸) -->
+  <div style="
+    flex: 1;
+    min-width: 240px;
+    max-width: 360px;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  ">
+    <iframe
+      src="https://www.youtube.com/embed/Y5-M9Cv0nLM"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      style="width:100%; height:100%; border:0;"
+    ></iframe>
+  </div>
+
+  <!-- 右邊圖表卡片 -->
+  <aside class="hero-card" style="flex: 1; min-width: 320px; max-width: 500px;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
       <div>
         <div style="font-size:13px;color:var(--muted)">今日節能建議</div>
@@ -143,29 +171,30 @@
     </div>
 
     <canvas id="energyChart"></canvas>
+
     <div class="kpi" style="
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  text-align: center;
-">
-  <div class="item">
-    <div class="num" style="font-weight: 800; font-size: 20px; color: #0f5132;">5,230+</div>
-    <div class="muted" style="color: #666;">綠色閱讀參與人次</div>
-  </div>
-  
-  <div class="item">
-    <div class="num" style="font-weight: 800; font-size: 20px; color: #0f5132;">+34%</div>
-    <div class="muted" style="color: #666;">電子書借閱成長</div>
-  </div>
-  
-  <div class="item">
-    <div class="num" style="font-weight: 800; font-size: 20px; color: #0f5132;">−12%</div>
-    <div class="muted" style="color: #666;">能源消耗下降</div>
-  </div>
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      text-align: center;
+    ">
+      <div class="item">
+        <div class="num" style="font-weight: 800; font-size: 20px; color: var(--green-700);">5,230+</div>
+        <div class="muted" style="color: var(--muted);">綠色閱讀參與人次</div>
+      </div>
+      <div class="item">
+        <div class="num" style="font-weight: 800; font-size: 20px; color: var(--green-700);">+34%</div>
+        <div class="muted" style="color: var(--muted);">電子書借閱成長</div>
+      </div>
+      <div class="item">
+        <div class="num" style="font-weight: 800; font-size: 20px; color: var(--green-700);">−12%</div>
+        <div class="muted" style="color: var(--muted);">能源消耗下降</div>
+      </div>
+    </div>
+
+  </aside>
+
 </div>
-    </aside>
-  </div>
 
     <section id="features" class="container">
       <h2 style="font-size:18px">主要功能</h2>
@@ -264,6 +293,7 @@
   </script>
 </body>
 </html>
+
 
 
 
