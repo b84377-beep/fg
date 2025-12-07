@@ -341,6 +341,73 @@
 </body>
 </html>
 
+<!-- ====== 在 Contact 區塊右邊加入按鈕 ====== -->
+<!-- 找到你的聯絡與合作區塊結束前，加上這行 -->
+<a href="#!" id="openImageBtn" class="cta" style="margin-left: 12px;">
+  查看產品示意圖
+</a>
+
+<!-- ====== Modal：顯示圖片 ====== -->
+<div id="imageModal" style="
+     display: none;
+     position: fixed;
+     top: 0; left: 0;
+     width: 100vw; height: 100vh;
+     background: rgba(0,0,0,0.6);
+     justify-content: center;
+     align-items: center;
+     z-index: 10000;
+">
+  <div style="
+       position: relative;
+       background: #fff;
+       border-radius: 14px;
+       max-width: 90%;
+       width: 800px;
+       padding: 0;
+  ">
+    <button id="closeImageModal" style="
+        position: absolute;
+        top: 8px; right: 12px;
+        background: none;
+        border: none;
+        font-size: 28px;
+        line-height: 1;
+        color: #555;
+        cursor: pointer;
+    ">&times;</button>
+
+    <img src="FuGreen_final.png" alt="FuGreen 產品示意圖"
+         style="width:100%; display:block; border-radius:12px;" />
+  </div>
+</div>
+
+<script>
+// 按鈕 & Modal 操作
+document.addEventListener('DOMContentLoaded', function () {
+  const openImageBtn = document.getElementById('openImageBtn');
+  const imageModal = document.getElementById('imageModal');
+  const closeImageModal = document.getElementById('closeImageModal');
+
+  openImageBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    imageModal.style.display = 'flex';
+  });
+
+  closeImageModal.addEventListener('click', function () {
+    imageModal.style.display = 'none';
+  });
+
+  imageModal.addEventListener('click', function (e) {
+    if (e.target === imageModal) {
+      imageModal.style.display = 'none';
+    }
+  });
+});
+</script>
+
+
+
 
 
 
