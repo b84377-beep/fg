@@ -407,18 +407,58 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-<footer style="
-    background: transparent !important;
-    text-align: center;
-    padding: 1em 0;
-    border-top: 1px solid #ccc;
-    margin-top: 2em;
-    margin-left: 5cm;
-">
-  <p style="margin: 0; background: transparent !important;">
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fu Green — 輔仁大學圖書館智慧永續</title>
+  <style>
+    /* --- existing site styles go above or be merged with these --- */
+
+    /* Footer style: 固定在頁面底部，向右偏移 7cm */
+    .fg-footer {
+      position: fixed;       /* 固定於視窗 */
+      bottom: 1rem;          /* 距離底部 1rem，可依需求調整 */
+      right: 7cm;            /* 向右 7cm（依使用者要求） */
+      font-size: 0.9rem;
+      line-height: 1;
+      background: transparent; /* 若想要底色可改成 rgba(...) */
+      padding: 0.2rem 0.4rem;
+      z-index: 9999;         /* 確保在最上層 */
+      white-space: nowrap;   /* 不換行，避免被折行 */
+    }
+
+    /* 若視窗太窄（手機等），改成靠右 1rem，並讓文字自動換行 */
+    @media (max-width: 800px) {
+      .fg-footer {
+        right: 1rem;
+        left: auto;
+        white-space: normal;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* 可選： 若頁面已有 footer 元素，這會避免蓋到內容 */
+    main {
+      padding-bottom: 3rem; /* 確保頁面內容不會被固定 footer 遮住 */
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- 原本頁面內容保持不變 -->
+  </main>
+
+  <!-- 新增或替換為網站底部版權區塊 -->
+  <div class="fg-footer" aria-hidden="false">
     輔仁大學圖書館智慧永續推動計畫 © 2025 版權所有
-  </p>
-</footer>
+  </div>
+
+</body>
+</html>
+
+
 
 
 
