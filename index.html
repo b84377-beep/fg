@@ -407,7 +407,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-  <div class="footer-bg-text" right: 12px;>輔仁大學圖書館智慧永續推動計畫 © 2025 版權所有</div>
+  .footer-bg-text {
+  position: fixed;
+  right: 10cm;       /* 距離視窗右側 10 cm */
+  bottom: 24px;      /* 距離底部 24px，可依需要調整 */
+  pointer-events: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  opacity: 0.06;
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+  z-index: 2147483646;
+}
+
+
 
 
 
