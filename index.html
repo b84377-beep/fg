@@ -407,12 +407,25 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-<footer class="footer-copyright">
-    <p>輔仁大學圖書館智慧永續推動計畫 © 2025 版權所有</p>
-</footer>
+/* 設定整個底部區塊的樣式 */
+.footer-copyright {
+    /* 將文字內容置中 */
+    text-align: center; 
+    
+    /* 確保它位於網頁底部 */
+    width: 100%; 
+    padding: 20px 0; /* 上下留白，讓版權文字更明顯 */
+    
+    /* 建議為其設定一個背景色或文字顏色，使其在您的網頁上清晰可見 */
+    background-color: #f8f8f8; /* 範例淺灰色背景 */
+    color: #555; /* 範例深灰色文字 */
+    font-size: 0.9em; /* 範例字體大小 */
+    
+    /* 如果您的網頁有內容重疊問題，您可能需要調整 position 屬性 */
+    /* position: relative; */ 
+    /* 或 position: fixed; bottom: 0; 如果您希望它固定在瀏覽器底部 */
+}
 
-</body>
-</html>
 
 
 
