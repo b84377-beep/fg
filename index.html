@@ -407,88 +407,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-<!doctype html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>預覽：輔仁大學圖書館智慧永續推動計畫 Footer 背景文字</title>
-  <style>
-    /* 範例頁面樣式（只供預覽） */
-    html,body{height:100%;margin:0;font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial}
-    .demo-content{
-      min-height:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: linear-gradient(180deg,#f7fbff 0%, #eef6ff 100%);
-      padding:40px;
-      box-sizing:border-box;
-    }
-    .card{
-      max-width:900px;
-      width:100%;
-      background:#fff;
-      border-radius:12px;
-      box-shadow:0 10px 30px rgba(20,30,50,0.08);
-      padding:36px;
-      box-sizing:border-box;
-    }
-
-    /* --- Footer 背景文字樣式（要加入到你的網站） --- */
-    .footer-bg-text{
-      position:fixed;            /* 固定在視窗 */
-      left:50%;
-      bottom:24px;               /* 距離底部的高度，可自行調整 */
-      transform:translateX(-50%);
-      z-index:2147483646;        /* 高於大多數元素，但不會阻擋互動（pointer-events:none） */
-      pointer-events:none;       /* 不攔截滑鼠事件 */
-      font-size:14px;            /* 字體大小，可依需要調整 */
-      font-weight:500;
-      color:#000;
-      opacity:0.06;              /* 透明度讓它像背景文字 */
-      white-space:nowrap;
-      letter-spacing:0.06em;
-      mix-blend-mode:normal;     /* 視覺混合效果，依照需求可改為 multiply/lighten */
-      backdrop-filter: none;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-
-    /* 在非常窄的裝置上，讓字自動縮小一點以避免換行 */
-    @media (max-width:420px){
-      .footer-bg-text{font-size:12px; bottom:16px}
-    }
-
-    /* 若想把文字放到更『背景』的位置（有時會被頁面元素蓋住），可改用 z-index:-1，但需搭配 body 背景或其他結構微調 */
-  </style>
-</head>
-<body>
-  <div class="demo-content">
-    <div class="card">
-      <h1>網站預覽範例</h1>
-      <p>這個示範頁面用來預覽「底部置中背景文字」的效果。實際套用請參考下方說明，把 HTML/CSS 區段加入到你的 GitHub Pages 網站的 index.html / 全站模板 中。</p>
-      <ul>
-        <li>文字：輔仁大學圖書館智慧永續推動計畫 © 2025 版權所有</li>
-        <li>位置：固定於視窗底部置中</li>
-        <li>樣式：低透明度、不可被滑鼠點擊（不影響操作）</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- 預覽中的 Footer 背景文字（實際套用時請將這個元素與對應 CSS 加入到你的網站） -->
   <div class="footer-bg-text">輔仁大學圖書館智慧永續推動計畫 © 2025 版權所有</div>
 
-  <!--
-    使用說明：
-    1) 若要套用到 https://b84377-beep.github.io/fg/ ，請把上面 CSS（.footer-bg-text 與必要的 media 規則）加入到你的全域 CSS 或 <style> 區塊。
-    2) 將 <div class="footer-bg-text">…</div> 這個元素加入到 <body> 底部（建議放在 </body> 前）。
-    3) 可微調底部距離 bottom、font-size、opacity 等屬性以符合你的視覺需求。
-    4) 若你的站台有特殊的 z-index 管理或 sticky footer，建議先測試 z-index 值（可降為 9999 或更小），或改用 z-index:-1 並調整背景層級。
-  -->
 
-</body>
-</html>
 
 
 
