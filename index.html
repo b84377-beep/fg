@@ -436,9 +436,19 @@ document.addEventListener('DOMContentLoaded', function () {
     imageModal.style.display = 'flex';
   });
 
-  closeImageModal.addEventListener('click', function () {
-    imageModal.style.display = 'none';
-  });
+  closeBookModal.addEventListener('click', function () {
+  bookModal.style.display = 'none';
+
+  // 🔴 關鍵：停止影片播放
+  bookVideo.src = bookVideo.src;
+});
+
+bookModal.addEventListener('click', function (e) {
+  if (e.target === bookModal) {
+    bookModal.style.display = 'none';
+    bookVideo.src = bookVideo.src;
+  }
+});
 
   imageModal.addEventListener('click', function (e) {
     if (e.target === imageModal) {
@@ -481,6 +491,7 @@ bookModal.addEventListener('click', function (e) {
 <footer style="background: transparent; margin-left: 8cm;">
   輔仁大學圖書館智慧永續推動計畫 © 輔仁大學圖書館 • 2025
 </footer>
+
 
 
 
