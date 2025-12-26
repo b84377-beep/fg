@@ -79,6 +79,79 @@
     #closeModal:hover{
       color:#007a3d;
     }
+    /* =========================
+   Responsive 修正（關鍵）
+========================= */
+
+/* ❌ 禁止使用 cm，強制歸零 */
+.hero-card,
+#contact,
+footer {
+  margin-left: 0 !important;
+}
+
+/* 手機（≤768px） */
+@media (max-width: 768px) {
+
+  nav {
+    display: none; /* 手機先隱藏選單，避免爆版 */
+  }
+
+  .hero {
+    padding: 24px 0;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-card {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  #features {
+    flex-direction: column;
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+
+  footer {
+    text-align: center;
+    padding: 16px;
+  }
+}
+
+/* 平板（769px–1024px） */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .hero {
+    gap: 20px;
+  }
+
+  .hero-card {
+    max-width: 100%;
+  }
+
+  #features {
+    flex-wrap: wrap;
+  }
+}
+
+/* 桌機（≥1025px） */
+@media (min-width: 1025px) {
+
+  .hero-card {
+    margin-left: auto;
+  }
+}
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -412,6 +485,7 @@
 <footer style="background: transparent; margin-left: 8cm;">
   輔仁大學圖書館智慧永續推動計畫 © 輔仁大學圖書館 • 2025
 </footer>
+
 
 
 
