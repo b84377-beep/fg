@@ -377,18 +377,17 @@
   const videoContainer = document.getElementById('videoContainer');
 
   function openVideo(videoId) {
-    videoContainer.innerHTML = `
-      <iframe
-        src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-        style="width:100%;height:100%;border:0;">
-      </iframe>
-    `;
-    videoModal.style.display = 'flex';
-  }
-
+  videoContainer.innerHTML = `
+    <iframe
+      src="https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      style="width:100%;height:100%;border:0;">
+    </iframe>
+  `;
+  videoModal.style.display = 'flex';
+}
   function closeVideo() {
     videoContainer.innerHTML = ''; // ★ 關閉＝完全停止
     videoModal.style.display = 'none';
@@ -413,6 +412,7 @@
 <footer style="background: transparent; margin-left: 8cm;">
   輔仁大學圖書館智慧永續推動計畫 © 輔仁大學圖書館 • 2025
 </footer>
+
 
 
 
