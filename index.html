@@ -378,100 +378,86 @@
     />
   </div>
 </div>
+    <!-- ===== 書籍介紹影片 Modal ===== -->
+<div id="bookModal" style="
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100vw; height:100vh;
+  background:rgba(0,0,0,0.65);
+  justify-content:center;
+  align-items:center;
+  z-index:10000;
+">
+  <div style="
+    position:relative;
+    width:90%;
+    max-width:900px;
+    background:#fff;
+    border-radius:16px;
+    padding:12px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.3);
+  ">
+    <button id="closeBookModal" style="
+      position:absolute;
+      top:6px; right:12px;
+      font-size:28px;
+      background:none;
+      border:none;
+      cursor:pointer;
+    ">&times;</button>
+
+    <div style="aspect-ratio:16/9;">
+      <iframe
+        id="bookVideo"
+        src=""
+        title="書籍介紹影片"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="width:100%; height:100%; border:none; border-radius:12px;">
+      </iframe>
+    </div>
+  </div>
+</div>
+
 
 </html>
-    <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const openImageBtn = document.getElementById('openImageBtn');
-  const imageModal = document.getElementById('imageModal');
-  const closeImageModal = document.getElementById('closeImageModal');
-
-  if (openImageBtn) {
-    openImageBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      imageModal.style.display = 'flex';
-    });
-  }
-
-  closeImageModal.addEventListener('click', function () {
-    imageModal.style.display = 'none';
-  });
-
-  imageModal.addEventListener('click', function (e) {
-    if (e.target === imageModal) {
-      imageModal.style.display = 'none';
-    }
-  });
-});
-</script>
-    
 <script>
-// 按鈕 & Modal 操作
 document.addEventListener('DOMContentLoaded', function () {
-  const openImageBtn = document.getElementById('openImageBtn');
-  const imageModal = document.getElementById('imageModal');
-  const closeImageModal = document.getElementById('closeImageModal');
+  const openBookBtn = document.getElementById('openBookBtn');
+  const bookModal = document.getElementById('bookModal');
+  const closeBookModal = document.getElementById('closeBookModal');
+  const bookVideo = document.getElementById('bookVideo');
 
-  openImageBtn.addEventListener('click', function (e) {
+  const videoURL = "https://www.youtube.com/embed/ieCA2mDwLMM?autoplay=1";
+
+  // 打開書籍介紹
+  openBookBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    imageModal.style.display = 'flex';
+    bookModal.style.display = 'flex';
+    bookVideo.src = videoURL; // ▶ 每次重新載入 → 從頭播放
   });
 
+  // 關閉（按 X）
   closeBookModal.addEventListener('click', function () {
-  bookModal.style.display = 'none';
-
-  // 🔴 關鍵：停止影片播放
-  bookVideo.src = bookVideo.src;
-});
-
-bookModal.addEventListener('click', function (e) {
-  if (e.target === bookModal) {
     bookModal.style.display = 'none';
-    bookVideo.src = bookVideo.src;
-  }
-});
+    bookVideo.src = ""; // 🔇 立刻停止 + 靜音
+  });
 
-  imageModal.addEventListener('click', function (e) {
-    if (e.target === imageModal) {
-      imageModal.style.display = 'none';
+  // 點背景關閉
+  bookModal.addEventListener('click', function (e) {
+    if (e.target === bookModal) {
+      bookModal.style.display = 'none';
+      bookVideo.src = "";
     }
   });
 });
-const openBookBtn = document.getElementById('openBookBtn');
-const bookModal = document.getElementById('bookModal');
-const closeBookModal = document.getElementById('closeBookModal');
-
-openBookBtn.addEventListener('click', function (e) {
-  e.preventDefault();
-  bookModal.style.display = 'flex';
-});
-
-const bookVideo = document.getElementById('bookVideo');
-
-closeBookModal.addEventListener('click', function () {
-  bookModal.style.display = 'none';
-
-  // 🔴 關鍵：停止影片播放
-  bookVideo.src = bookVideo.src;
-});
-
-bookModal.addEventListener('click', function (e) {
-  if (e.target === bookModal) {
-    bookModal.style.display = 'none';
-    bookVideo.src = bookVideo.src;
-  }
-});
-
-bookModal.addEventListener('click', function (e) {
-  if (e.target === bookModal) {
-    bookModal.style.display = 'none';
-  }
-});  
 </script>
 
 <footer style="background: transparent; margin-left: 8cm;">
   輔仁大學圖書館智慧永續推動計畫 © 輔仁大學圖書館 • 2025
 </footer>
+
 
 
 
