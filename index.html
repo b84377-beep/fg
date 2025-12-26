@@ -361,89 +361,55 @@
   </div>
 </div>
 </html>
+    
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ===== 書籍介紹 ===== */
   const openBookBtn = document.getElementById('openBookBtn');
   const bookModal = document.getElementById('bookModal');
-  const closeBookModal = document.getElementById('closeBookModal');
   const bookVideo = document.getElementById('bookVideo');
+  const closeBookModal = document.getElementById('closeBookModal');
 
-  const videoURL = "https://www.youtube.com/embed/ieCA2mDwLMM?autoplay=1";
+  const bookURL = "https://www.youtube.com/embed/ieCA2mDwLMM?autoplay=1&mute=1";
 
-  // 打開書籍介紹
-  openBookBtn.addEventListener('click', function (e) {
+  openBookBtn.onclick = e => {
     e.preventDefault();
     bookModal.style.display = 'flex';
-    bookVideo.src = videoURL; // ▶ 每次重新載入 → 從頭播放
-  });
+    bookVideo.src = bookURL;
+  };
 
-  // 關閉（按 X）
-  closeBookModal.addEventListener('click', function () {
-    bookModal.style.display = 'none';
-    bookVideo.src = ""; // 🔇 立刻停止 + 靜音
-  });
-
-  // 點背景關閉
-  bookModal.addEventListener('click', function (e) {
-    if (e.target === bookModal) {
-      bookModal.style.display = 'none';
-      bookVideo.src = "";
-    }
-  });
-});
-  <script>
-document.addEventListener('DOMContentLoaded', function () {
-
-  /* ===== 書籍介紹（你原本的，保留） ===== */
-  const openBookBtn = document.getElementById('openBookBtn');
-  const bookModal = document.getElementById('bookModal');
-  const closeBookModal = document.getElementById('closeBookModal');
-  const bookVideo = document.getElementById('bookVideo');
-  const bookVideoURL = "https://www.youtube.com/embed/ieCA2mDwLMM?autoplay=1";
-
-  openBookBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    bookModal.style.display = 'flex';
-    bookVideo.src = bookVideoURL;
-  });
-
-  closeBookModal.addEventListener('click', function () {
+  closeBookModal.onclick = () => {
     bookModal.style.display = 'none';
     bookVideo.src = "";
-  });
+  };
 
-  bookModal.addEventListener('click', function (e) {
-    if (e.target === bookModal) {
-      bookModal.style.display = 'none';
-      bookVideo.src = "";
-    }
-  });
+  bookModal.onclick = e => {
+    if (e.target === bookModal) closeBookModal.onclick();
+  };
 
-  /* ===== Fu Green 活動影片（新增） ===== */
+  /* ===== Fu Green 活動 ===== */
   const openEventBtn = document.getElementById('openEventBtn');
   const eventModal = document.getElementById('eventModal');
-  const closeEventModal = document.getElementById('closeEventModal');
   const eventVideo = document.getElementById('eventVideo');
+  const closeEventModal = document.getElementById('closeEventModal');
 
-  const eventVideoURL = "https://www.youtube.com/embed/Um9UmiyS9c8?autoplay=1";
+  const eventURL = "https://www.youtube.com/embed/Um9UmiyS9c8?autoplay=1&mute=1";
 
-  openEventBtn.addEventListener('click', function (e) {
+  openEventBtn.onclick = e => {
     e.preventDefault();
     eventModal.style.display = 'flex';
-    eventVideo.src = eventVideoURL; // ▶ 每次重新播放
-  });
+    eventVideo.src = eventURL;
+  };
 
-  closeEventModal.addEventListener('click', function () {
+  closeEventModal.onclick = () => {
     eventModal.style.display = 'none';
-    eventVideo.src = ""; // 🔇 關掉就停聲音
-  });
+    eventVideo.src = "";
+  };
 
-  eventModal.addEventListener('click', function (e) {
-    if (e.target === eventModal) {
-      eventModal.style.display = 'none';
-      eventVideo.src = "";
-    }
-  });
+  eventModal.onclick = e => {
+    if (e.target === eventModal) closeEventModal.onclick();
+  };
 
 });
 </script>
@@ -451,6 +417,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <footer style="background: transparent; margin-left: 8cm;">
   輔仁大學圖書館智慧永續推動計畫 © 輔仁大學圖書館 • 2025
 </footer>
+
 
 
 
