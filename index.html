@@ -152,6 +152,54 @@ footer {
     margin-left: auto;
   }
 }
+    /* ===== 手機漢堡選單 ===== */
+
+#menuToggle {
+  display: none;
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* 手機選單本體 */
+#mobileMenu {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  z-index: 1500;
+}
+
+#mobileMenu a {
+  display: block;
+  padding: 16px 24px;
+  border-bottom: 1px solid #eee;
+  color: #007a3d;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#mobileMenu a:hover {
+  background: #f4fff7;
+}
+
+/* ===== 手機版顯示規則 ===== */
+@media (max-width: 768px) {
+
+  nav {
+    display: none;
+  }
+
+  #menuToggle {
+    display: block;
+  }
+}
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -173,6 +221,18 @@ footer {
         <a href="#!" id="openEventBtn">Fu Green 活動</a>
         <a href="#contact">聯絡</a>
       </nav>
+      <!-- 手機漢堡選單按鈕 -->
+<button id="menuToggle" aria-label="Open Menu">☰</button>
+
+<!-- 手機版選單 -->
+<div id="mobileMenu">
+  <a href="#features">功能介紹</a>
+  <a href="#timeline">期程</a>
+  <a href="#impact">預期成效</a>
+  <a href="#!" id="mobileBookBtn">書籍介紹</a>
+  <a href="#!" id="mobileEventBtn">Fu Green 活動</a>
+  <a href="#contact">聯絡</a>
+</div>
     </div>
   </header>
 
@@ -479,11 +539,32 @@ footer {
   videoModal.addEventListener('click', function(e){
     if (e.target === videoModal) closeVideo();
   });
+    <script>
+  /* ===== 手機選單控制 ===== */
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.style.display =
+      mobileMenu.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // 點擊選單項目後自動關閉
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.style.display = 'none';
+    });
+  });
+
+  // 手機版影片按鈕連動
+  document.getElementById('mobileBookBtn').onclick = () => openVideo('ieCA2mDwLMM');
+  document.getElementById('mobileEventBtn').onclick = () => openVideo('Um9UmiyS9c8');
 </script>
 
 <footer style="background: transparent;">
   輔仁大學圖書館智慧永續推動計畫 © 輔仁大學圖書館 • 2025
 </footer>
+
 
 
 
