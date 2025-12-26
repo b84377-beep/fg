@@ -103,6 +103,45 @@
   </header>
 
   <main>
+    <!-- ===== 書籍介紹影片 Modal ===== -->
+<div id="bookModal" style="
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100vw; height:100vh;
+  background:rgba(0,0,0,0.65);
+  justify-content:center;
+  align-items:center;
+  z-index:10000;
+">
+  <div style="
+    position:relative;
+    width:90%;
+    max-width:900px;
+    background:#fff;
+    border-radius:16px;
+    padding:12px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.3);
+  ">
+    <button id="closeBookModal" style="
+      position:absolute;
+      top:6px; right:12px;
+      font-size:28px;
+      background:none;
+      border:none;
+      cursor:pointer;
+    ">&times;</button>
+
+    <!-- 🔴🔴🔴 書籍介紹影片「就是放在這裡」🔴🔴🔴 -->
+    <div style="aspect-ratio:16/9;">
+     <iframe
+  id="bookVideo"
+  src="https://www.youtube.com/embed/ieCA2mDwLMM"
+  title="書籍介紹影片"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="width:100%; height:100%; border:none; border-radius:12px;">
+</iframe>
    <section class="container hero">
   <div style="flex:1;min-width:300px; display:flex; flex-direction:column; gap:20px;">
 
@@ -342,48 +381,6 @@
 </body>
 </html>
 
-<!-- ====== 在 Contact 區塊右邊加入按鈕 ====== -->
-<!-- 找到你的聯絡與合作區塊結束前，加上這行 -->
-<a href="#!" id="openImageBtn" class="cta" 
-   style="margin-left: 12px; margin-top: 2.8cm; display: inline-block;">
-  Fu Green 宣傳小物
-</a>
-
-<!-- ====== Modal：顯示圖片 ====== -->
-<div id="imageModal" style="
-     display: none;
-     position: fixed;
-     top: 0; left: 0;
-     width: 100vw; height: 100vh;
-     background: rgba(0,0,0,0.6);
-     justify-content: center;
-     align-items: center;
-     z-index: 10000;
-">
-  <div style="
-       position: relative;
-       background: #fff;
-       border-radius: 14px;
-       max-width: 90%;
-       width: 800px;
-       padding: 0;
-  ">
-    <button id="closeImageModal" style="
-        position: absolute;
-        top: 8px; right: 12px;
-        background: none;
-        border: none;
-        font-size: 28px;
-        line-height: 1;
-        color: #555;
-        cursor: pointer;
-    ">&times;</button>
-
-    <img src="FuGreen_final.png" alt="FuGreen 產品示意圖"
-         style="width:100%; display:block; border-radius:12px;" />
-  </div>
-</div>
-
 <script>
 // 按鈕 & Modal 操作
 document.addEventListener('DOMContentLoaded', function () {
@@ -451,6 +448,7 @@ bookModal.addEventListener('click', function (e) {
 <footer style="background: transparent; margin-left: 8cm;">
   輔仁大學圖書館智慧永續推動計畫 © 輔仁大學圖書館 • 2025
 </footer>
+
 
 
 
