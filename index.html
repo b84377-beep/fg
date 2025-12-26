@@ -382,6 +382,49 @@
     </div>
   </div>
 </div>
+
+    <!-- ===== Fu Green 活動影片 Modal ===== -->
+<div id="eventModal" style="
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100vw; height:100vh;
+  background:rgba(0,0,0,0.65);
+  justify-content:center;
+  align-items:center;
+  z-index:10000;
+">
+  <div style="
+    position:relative;
+    width:90%;
+    max-width:900px;
+    background:#fff;
+    border-radius:16px;
+    padding:12px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.3);
+  ">
+    <button id="closeEventModal" style="
+      position:absolute;
+      top:6px; right:12px;
+      font-size:28px;
+      background:none;
+      border:none;
+      cursor:pointer;
+    ">&times;</button>
+
+    <div style="aspect-ratio:16/9;">
+      <iframe
+        id="eventVideo"
+        src=""
+        title="Fu Green 活動影片"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="width:100%; height:100%; border:none; border-radius:12px;">
+      </iframe>
+    </div>
+  </div>
+</div>
+
 </html>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -413,11 +456,70 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ===== 書籍介紹（你原本的，保留） ===== */
+  const openBookBtn = document.getElementById('openBookBtn');
+  const bookModal = document.getElementById('bookModal');
+  const closeBookModal = document.getElementById('closeBookModal');
+  const bookVideo = document.getElementById('bookVideo');
+  const bookVideoURL = "https://www.youtube.com/embed/ieCA2mDwLMM?autoplay=1";
+
+  openBookBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    bookModal.style.display = 'flex';
+    bookVideo.src = bookVideoURL;
+  });
+
+  closeBookModal.addEventListener('click', function () {
+    bookModal.style.display = 'none';
+    bookVideo.src = "";
+  });
+
+  bookModal.addEventListener('click', function (e) {
+    if (e.target === bookModal) {
+      bookModal.style.display = 'none';
+      bookVideo.src = "";
+    }
+  });
+
+  /* ===== Fu Green 活動影片（新增） ===== */
+  const openEventBtn = document.getElementById('openEventBtn');
+  const eventModal = document.getElementById('eventModal');
+  const closeEventModal = document.getElementById('closeEventModal');
+  const eventVideo = document.getElementById('eventVideo');
+
+  const eventVideoURL = "https://www.youtube.com/embed/Um9UmiyS9c8?autoplay=1";
+
+  openEventBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    eventModal.style.display = 'flex';
+    eventVideo.src = eventVideoURL; // ▶ 每次重新播放
+  });
+
+  closeEventModal.addEventListener('click', function () {
+    eventModal.style.display = 'none';
+    eventVideo.src = ""; // 🔇 關掉就停聲音
+  });
+
+  eventModal.addEventListener('click', function (e) {
+    if (e.target === eventModal) {
+      eventModal.style.display = 'none';
+      eventVideo.src = "";
+    }
+  });
+
+});
+</script>
+
 </script>
 
 <footer style="background: transparent; margin-left: 8cm;">
   輔仁大學圖書館智慧永續推動計畫 © 輔仁大學圖書館 • 2025
 </footer>
+
 
 
 
