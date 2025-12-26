@@ -341,83 +341,10 @@
     });
   </script>
 
-       <!-- ===== 書籍介紹影片 Modal ===== -->
-<div id="bookModal" class="video-modal">
-  <div class="video-box">
-    <button class="close-btn" id="closeBookModal">&times;</button>
-    <div class="video-wrap">
-      <iframe id="bookVideo" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-  </div>
-</div>
-
-<!-- ===== Fu Green 活動影片 Modal ===== -->
-<div id="eventModal" class="video-modal">
-  <div class="video-box">
-    <button class="close-btn" id="closeEventModal">&times;</button>
-    <div class="video-wrap">
-      <iframe id="eventVideo" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-  </div>
-</div>
-</html>
-    
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* ===== 書籍介紹 ===== */
-  const openBookBtn = document.getElementById('openBookBtn');
-  const bookModal = document.getElementById('bookModal');
-  const bookVideo = document.getElementById('bookVideo');
-  const closeBookModal = document.getElementById('closeBookModal');
-
-  const bookURL = "https://www.youtube.com/embed/ieCA2mDwLMM?autoplay=1&mute=1";
-
-  openBookBtn.onclick = e => {
-    e.preventDefault();
-    bookModal.style.display = 'flex';
-    bookVideo.src = bookURL;
-  };
-
-  closeBookModal.onclick = () => {
-    bookModal.style.display = 'none';
-    bookVideo.src = "";
-  };
-
-  bookModal.onclick = e => {
-    if (e.target === bookModal) closeBookModal.onclick();
-  };
-
-  /* ===== Fu Green 活動 ===== */
-  const openEventBtn = document.getElementById('openEventBtn');
-  const eventModal = document.getElementById('eventModal');
-  const eventVideo = document.getElementById('eventVideo');
-  const closeEventModal = document.getElementById('closeEventModal');
-
-  const eventURL = "https://www.youtube.com/embed/Um9UmiyS9c8?autoplay=1&mute=1";
-
-  openEventBtn.onclick = e => {
-    e.preventDefault();
-    eventModal.style.display = 'flex';
-    eventVideo.src = eventURL;
-  };
-
-  closeEventModal.onclick = () => {
-    eventModal.style.display = 'none';
-    eventVideo.src = "";
-  };
-
-  eventModal.onclick = e => {
-    if (e.target === eventModal) closeEventModal.onclick();
-  };
-
-});
-</script>
-</body>
-
 <footer style="background: transparent; margin-left: 8cm;">
   輔仁大學圖書館智慧永續推動計畫 © 輔仁大學圖書館 • 2025
 </footer>
+
 
 
 
